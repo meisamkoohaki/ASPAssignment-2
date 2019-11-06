@@ -1,0 +1,48 @@
+﻿@model Assignment2BaseballWebsite.Models.TeamInfo
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TeamInfo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TeamName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TeamName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TeamLogoURL)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TeamLogoURL)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TeamDivision)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TeamDivision)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HomeField)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HomeField)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TeamManager)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TeamManager)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.TeamInfoId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

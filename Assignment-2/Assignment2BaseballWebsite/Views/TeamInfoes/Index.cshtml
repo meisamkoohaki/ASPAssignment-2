@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Assignment2BaseballWebsite.Models.TeamInfo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Team Information</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TeamName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TeamLogoURL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TeamDivision)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HomeField)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TeamManager)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeamName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeamLogoURL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeamDivision)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeField)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeamManager)
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>

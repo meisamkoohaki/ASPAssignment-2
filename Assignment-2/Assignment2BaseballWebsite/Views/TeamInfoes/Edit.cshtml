@@ -1,0 +1,54 @@
+﻿@model Assignment2BaseballWebsite.Models.TeamInfo
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>TeamInfo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TeamInfoId" />
+            <div class="form-group">
+                <label asp-for="TeamName" class="control-label"></label>
+                <input asp-for="TeamName" class="form-control" />
+                <span asp-validation-for="TeamName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamLogoURL" class="control-label"></label>
+                <input asp-for="TeamLogoURL" class="form-control" />
+                <span asp-validation-for="TeamLogoURL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamDivision" class="control-label"></label>
+                <input asp-for="TeamDivision" class="form-control" />
+                <span asp-validation-for="TeamDivision" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HomeField" class="control-label"></label>
+                <input asp-for="HomeField" class="form-control" />
+                <span asp-validation-for="HomeField" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamManager" class="control-label"></label>
+                <input asp-for="TeamManager" class="form-control" />
+                <span asp-validation-for="TeamManager" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

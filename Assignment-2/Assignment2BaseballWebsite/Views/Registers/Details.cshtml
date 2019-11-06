@@ -1,0 +1,114 @@
+﻿@model Assignment2BaseballWebsite.Models.Register
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Register</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthMonth)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BirthMonth)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthDay)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BirthDay)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthYear)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BirthYear)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StreetNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StreetNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StreetName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StreetName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PostalCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PostalCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmailAddress)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EmergencyFirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmergencyFirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EmergencyLastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmergencyLastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EmergencyRelationship)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmergencyRelationship)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EmergencyPhoneNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmergencyPhoneNumber)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.RegisterId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

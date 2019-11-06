@@ -1,0 +1,116 @@
+﻿@model Assignment2BaseballWebsite.Models.Register
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h2>Register Online</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="register-wrapper">
+                <h3 class="register-sub-title">Player Details</h3>
+                <div class="form-group">
+                    <label asp-for="FirstName" class="control-label"></label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastName" class="control-label"></label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Gender" class="control-label"></label>
+                    <input asp-for="Gender" class="form-control" />
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BirthMonth" class="control-label"></label>
+                    <input asp-for="BirthMonth" class="form-control" />
+                    <span asp-validation-for="BirthMonth" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BirthDay" class="control-label"></label>
+                    <input asp-for="BirthDay" class="form-control" />
+                    <span asp-validation-for="BirthDay" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BirthYear" class="control-label"></label>
+                    <input asp-for="BirthYear" class="form-control" />
+                    <span asp-validation-for="BirthYear" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="register-wrapper">
+                <h3 class="register-sub-title">Players Address</h3>
+                <div class="form-group">
+                    <label asp-for="StreetNumber" class="control-label"></label>
+                    <input asp-for="StreetNumber" class="form-control" />
+                    <span asp-validation-for="StreetNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="StreetName" class="control-label"></label>
+                    <input asp-for="StreetName" class="form-control" />
+                    <span asp-validation-for="StreetName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="City" class="control-label"></label>
+                    <input asp-for="City" class="form-control" />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PostalCode" class="control-label"></label>
+                    <input asp-for="PostalCode" class="form-control" />
+                    <span asp-validation-for="PostalCode" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="register-wrapper">
+                <h3 class="register-sub-title">Contact Information</h3>
+                <div class="form-group">
+                    <label asp-for="PhoneNumber" class="control-label"></label>
+                    <input asp-for="PhoneNumber" class="form-control" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EmailAddress" class="control-label"></label>
+                    <input asp-for="EmailAddress" class="form-control" />
+                    <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="register-wrapper">
+                <h3 class="register-sub-title">Emergency Contact</h3>
+                <div class="form-group">
+                    <label asp-for="EmergencyFirstName" class="control-label"></label>
+                    <input asp-for="EmergencyFirstName" class="form-control" />
+                    <span asp-validation-for="EmergencyFirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EmergencyLastName" class="control-label"></label>
+                    <input asp-for="EmergencyLastName" class="form-control" />
+                    <span asp-validation-for="EmergencyLastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EmergencyRelationship" class="control-label"></label>
+                    <input asp-for="EmergencyRelationship" class="form-control" />
+                    <span asp-validation-for="EmergencyRelationship" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EmergencyPhoneNumber" class="control-label"></label>
+                    <input asp-for="EmergencyPhoneNumber" class="form-control" />
+                    <span asp-validation-for="EmergencyPhoneNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-default" />
+                </div>
+            </div>        
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
