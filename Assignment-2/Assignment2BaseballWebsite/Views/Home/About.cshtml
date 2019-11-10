@@ -1,18 +1,83 @@
-﻿@{
-    ViewData["Title"] = "League Info";
-}
-<h2>@ViewData["Title"]</h2>
+﻿
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Home Page</title>
+    <style>
+        body {
+            background-color: #e1eef4;
+            background-image: url('/../images/ground2.jpg');
+            background-position: 50% 140px;
+            background-repeat: no-repeat;
+            background-size: 100% 600px;
+            background-attachment: fixed;
+            height: 1500px;
+        }
+
+        #logo {
+            width: 100%;
+            height: auto;
+            position: fixed;
+            align-content: center;
+            margin-left: -2%;
+            display: block;
+            overflow: hidden;
+        }
+
+        h1 {
+            text-align: left;
+            padding-top: 20px;
+            font-size: 20px;
+            margin-left: 20px;
+        }
 
 
-<section>
-    <p>
-        We are a local adult baseball league that operates in Barrie.  The league is played on various nights throughout the week.  This is a great way to stay fit, meet new people and have fun.  There are two different leagues to choose from.  Our Jr league is age 16-25 and the Sr league is age 25+
-    </p>
-    <p>
-        You can register <a asp-area="" asp-controller="Registers" asp-action="Create"><span class="Here">Here</span></a> as a individual.
-    </p>
+        #home-title {
+            text-align: left;
+            position: relative;
+            top: 300px;
+            height: 500px;
+            background-color: #566433;
+            color: white;
+        }
 
-    <p>
-        All teams are selected during draft night at the beginning of each season. <br /> All are welcome to attend the draft as captaions will be selected randomly from those in attendence.
-    </p>
-</section>
+        #welcome {
+            font-size: 40px;
+            font-weight: 800;
+            padding-top: 30px;
+        }
+
+        p {
+            font-weight: bold;
+            width: 80%;
+            font-family: "Arial", Times, sans-serif;
+            font-size: 24px;
+            margin-left: 10%;
+        }
+    </style>
+    <div id="logo">
+        <img src="../images/header4.png" id="header_logo" alt="BLUE GEEKS BASEBALL CLUB">
+    </div>
+</head>
+<body>
+    <div id="home-title">
+        <h1>About us</h1>
+        <section>
+            <p>
+                We are a local adult baseball league that operates in Barrie.  The league is played on various nights throughout the week.  This is a great way to stay fit, meet new people and have fun.  There are two different leagues to choose from.  Our Jr league is age 16-25 and the Sr league is age 25+
+            </p>
+            <p>
+                You can register <a asp-area="" asp-controller="Registers" asp-action="Create"><span class="Here">Here</span></a> as a individual.
+            </p>
+
+            <p>
+                All teams are selected during draft night at the beginning of each season. <br /> All are welcome to attend the draft as captaions will be selected randomly from those in attendence.
+            </p>
+        </section>
+    </div>
+</body>
+</html>
+
+
+
+
