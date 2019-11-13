@@ -6,8 +6,17 @@
 
 <h2>Index</h2>
 
+<div>
+    <p>
+        add Standings table here.   It will read which team from the schedule has the highest score.  Team with higher score get awarded a win and the team with the lower score gets awarded a loss.  These will need to be updated into the standings table and the standings table should be ordered by points highest team is first.
+    </p>
+</div>
+<div>
+    <p>The table should have columns for team name / Wins / Loses</p>
+</div>
+
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Create </a>
 </p>
 <table class="table">
     <thead>
@@ -31,29 +40,39 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.HomeTeamScore)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AwayTeamScore)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GameDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Time)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.teamInfo.HomeField)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ScheduleId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ScheduleId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ScheduleId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HomeTeamScore)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AwayTeamScore)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GameDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.teamInfo.HomeField)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ScheduleId">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.ScheduleId">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.ScheduleId">Delete</a>
+                </td>
+            </tr>
+
+            <div>
+                <p>
+                    add Standings table here.   It will read which team from the schedule has the highest score.  Team with higher score get awarded a win and the team with the lower score gets awarded a loss.  These will need to be updated into the standings table and the standings table should be ordered by points highest team is first.
+                </p>
+            </div>
+            <div>
+                <p>The table should have columns for team name / Wins / Loses</p>
+            </div>
+        }
     </tbody>
 </table>
