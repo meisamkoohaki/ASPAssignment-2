@@ -13,10 +13,10 @@ namespace Assignment2BaseballWebsite.Models
         public virtual int ScheduleId { get; set; }
 
         [Required]
-        public virtual String HomeTeam { get; set; }
+        public virtual int HomeTeamScore { get; set; }
 
         [Required]
-        public virtual String AwayTeam { get; set; }
+        public virtual int AwayTeamScore { get; set; }
 
         [Display(Name = "Game Date")]
         [Required]
@@ -26,7 +26,9 @@ namespace Assignment2BaseballWebsite.Models
         [Required]
         public virtual String Time { get; set; }
 
+        public virtual TeamInfo teamInfo { get; set; }
 
+        public virtual int TeamInfoId { get; set; }
     }
 }
 

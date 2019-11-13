@@ -13,24 +13,28 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="HomeTeam" class="control-label"></label>
-                <input asp-for="HomeTeam" class="form-control" />
-                <span asp-validation-for="HomeTeam" class="text-danger"></span>
+                <label asp-for="TeamInfoId" class="control-label">Home team</label>
+                <select asp-for="TeamInfoId" class="form-control" asp-items="ViewBag.TeamName"></select>
             </div>
             <div class="form-group">
-                <label asp-for="AwayTeam" class="control-label"></label>
-                <input asp-for="AwayTeam" class="form-control" />
-                <span asp-validation-for="AwayTeam" class="text-danger"></span>
+                <label asp-for="TeamInfoId" class="control-label">Away team</label>
+                <select asp-for="TeamInfoId" class="form-control" asp-items="ViewBag.TeamName"></select>
             </div>
             <div class="form-group">
-                <label asp-for="GameDate" class="control-label"></label>
+                <label asp-for="GameDate" class="control-label">Match date</label>
                 <input asp-for="GameDate" class="form-control" />
-                <span asp-validation-for="GameDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Time" class="control-label"></label>
+                <label asp-for="Time" class="control-label">Time</label>
                 <input asp-for="Time" class="form-control" />
-                <span asp-validation-for="Time" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HomeTeamScore" class="control-label">Home team score</label>
+                <input asp-for="HomeTeamScore" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="AwayTeamScore" class="control-label">Away team score</label>
+                <input asp-for="AwayTeamScore" class="form-control" />
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />

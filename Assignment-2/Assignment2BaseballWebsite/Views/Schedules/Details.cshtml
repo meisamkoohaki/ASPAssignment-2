@@ -11,16 +11,16 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.HomeTeam)
+            @Html.DisplayNameFor(model => model.HomeTeamScore)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.HomeTeam)
+            @Html.DisplayFor(model => model.HomeTeamScore)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.AwayTeam)
+            @Html.DisplayNameFor(model => model.AwayTeamScore)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.AwayTeam)
+            @Html.DisplayFor(model => model.AwayTeamScore)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.GameDate)
@@ -33,6 +33,12 @@
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Time)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.teamInfo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.teamInfo.HomeField)
         </dd>
     </dl>
 </div>

@@ -22,7 +22,8 @@ namespace Assignment2BaseballWebsite.Controllers
         // GET: Schedules
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Schedule.ToListAsync());
+            var applicationDbContext = _context.Schedule.Include(s => s.teamInfo);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Schedules/Details/5
@@ -34,6 +35,7 @@ namespace Assignment2BaseballWebsite.Controllers
             }
 
             var schedule = await _context.Schedule
+                .Include(s => s.teamInfo)
                 .FirstOrDefaultAsync(m => m.ScheduleId == id);
             if (schedule == null)
             {
@@ -46,6 +48,7 @@ namespace Assignment2BaseballWebsite.Controllers
         // GET: Schedules/Create
         public IActionResult Create()
         {
+            ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "HomeField");
             return View();
         }
 
@@ -54,7 +57,7 @@ namespace Assignment2BaseballWebsite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ScheduleId,HomeTeam,AwayTeam,GameDate,Time")] Schedule schedule)
+        public async Task<IActionResult> Create([Bind("ScheduleId,HomeTeamScore,AwayTeamScore,GameDate,Time,TeamInfoId")] Schedule schedule)
         {
             if (ModelState.IsValid)
             {
@@ -62,6 +65,7 @@ namespace Assignment2BaseballWebsite.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "HomeField", schedule.TeamInfoId);
             return View(schedule);
         }
 
@@ -78,6 +82,7 @@ namespace Assignment2BaseballWebsite.Controllers
             {
                 return NotFound();
             }
+            ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "HomeField", schedule.TeamInfoId);
             return View(schedule);
         }
 
@@ -86,7 +91,7 @@ namespace Assignment2BaseballWebsite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ScheduleId,HomeTeam,AwayTeam,GameDate,Time")] Schedule schedule)
+        public async Task<IActionResult> Edit(int id, [Bind("ScheduleId,HomeTeamScore,AwayTeamScore,GameDate,Time,TeamInfoId")] Schedule schedule)
         {
             if (id != schedule.ScheduleId)
             {
@@ -113,6 +118,7 @@ namespace Assignment2BaseballWebsite.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "HomeField", schedule.TeamInfoId);
             return View(schedule);
         }
 
@@ -125,6 +131,7 @@ namespace Assignment2BaseballWebsite.Controllers
             }
 
             var schedule = await _context.Schedule
+                .Include(s => s.teamInfo)
                 .FirstOrDefaultAsync(m => m.ScheduleId == id);
             if (schedule == null)
             {

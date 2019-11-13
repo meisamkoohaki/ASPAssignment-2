@@ -81,6 +81,9 @@ namespace Assignment2BaseballWebsite.Models
         [Display(Name = "Phone Number")]
         public virtual int EmergencyPhoneNumber { get; set; }
 
+        public virtual TeamInfo teamInfo { get; set; }
+
+        public virtual int TeamInfoId { get; set; }
 
     }
 }

@@ -22,7 +22,8 @@ namespace Assignment2BaseballWebsite.Controllers
         // GET: Registers
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Register.ToListAsync());
+            var applicationDbContext = _context.Register.Include(r => r.teamInfo);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Registers/Details/5
@@ -34,6 +35,7 @@ namespace Assignment2BaseballWebsite.Controllers
             }
 
             var register = await _context.Register
+                .Include(r => r.teamInfo)
                 .FirstOrDefaultAsync(m => m.RegisterId == id);
             if (register == null)
             {
@@ -46,6 +48,7 @@ namespace Assignment2BaseballWebsite.Controllers
         // GET: Registers/Create
         public IActionResult Create()
         {
+            ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "HomeField");
             return View();
         }
 
@@ -54,7 +57,7 @@ namespace Assignment2BaseballWebsite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("RegisterId,FirstName,LastName,Gender,BirthMonth,BirthDay,BirthYear,StreetNumber,StreetName,City,PostalCode,PhoneNumber,EmailAddress,EmergencyFirstName,EmergencyLastName,EmergencyRelationship,EmergencyPhoneNumber")] Register register)
+        public async Task<IActionResult> Create([Bind("RegisterId,FirstName,LastName,Gender,BirthMonth,BirthDay,BirthYear,StreetNumber,StreetName,City,PostalCode,PhoneNumber,EmailAddress,EmergencyFirstName,EmergencyLastName,EmergencyRelationship,EmergencyPhoneNumber,TeamInfoId")] Register register)
         {
             if (ModelState.IsValid)
             {
@@ -62,6 +65,7 @@ namespace Assignment2BaseballWebsite.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "HomeField", register.TeamInfoId);
             return View(register);
         }
 
@@ -78,6 +82,7 @@ namespace Assignment2BaseballWebsite.Controllers
             {
                 return NotFound();
             }
+            ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "HomeField", register.TeamInfoId);
             return View(register);
         }
 
@@ -86,7 +91,7 @@ namespace Assignment2BaseballWebsite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("RegisterId,FirstName,LastName,Gender,BirthMonth,BirthDay,BirthYear,StreetNumber,StreetName,City,PostalCode,PhoneNumber,EmailAddress,EmergencyFirstName,EmergencyLastName,EmergencyRelationship,EmergencyPhoneNumber")] Register register)
+        public async Task<IActionResult> Edit(int id, [Bind("RegisterId,FirstName,LastName,Gender,BirthMonth,BirthDay,BirthYear,StreetNumber,StreetName,City,PostalCode,PhoneNumber,EmailAddress,EmergencyFirstName,EmergencyLastName,EmergencyRelationship,EmergencyPhoneNumber,TeamInfoId")] Register register)
         {
             if (id != register.RegisterId)
             {
@@ -113,6 +118,7 @@ namespace Assignment2BaseballWebsite.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "HomeField", register.TeamInfoId);
             return View(register);
         }
 
@@ -125,6 +131,7 @@ namespace Assignment2BaseballWebsite.Controllers
             }
 
             var register = await _context.Register
+                .Include(r => r.teamInfo)
                 .FirstOrDefaultAsync(m => m.RegisterId == id);
             if (register == null)
             {

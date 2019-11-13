@@ -4,22 +4,28 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Season Schedule</h2>
+<h2>Index</h2>
 
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.HomeTeam)
+                @Html.DisplayNameFor(model => model.HomeTeamScore)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AwayTeam)
+                @Html.DisplayNameFor(model => model.AwayTeamScore)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.GameDate)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.teamInfo)
             </th>
             <th></th>
         </tr>
@@ -28,10 +34,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.HomeTeam)
+                @Html.DisplayFor(modelItem => item.HomeTeamScore)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.AwayTeam)
+                @Html.DisplayFor(modelItem => item.AwayTeamScore)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.GameDate)
@@ -39,7 +45,14 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Time)
             </td>
-
+            <td>
+                @Html.DisplayFor(modelItem => item.teamInfo.HomeField)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ScheduleId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ScheduleId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ScheduleId">Delete</a>
+            </td>
         </tr>
 }
     </tbody>
