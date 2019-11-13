@@ -17,8 +17,10 @@ namespace Assignment2BaseballWebsite.Models
 
         public virtual int Triples { get; set; }
 
+        [Display(Name = "Home Runs")]
         public virtual int HomeRuns { get; set; }
 
+        [Display(Name = "Runs Batted In")]
         public virtual int RunsBattedIn { get; set; }
 
         public virtual Register playerInfo { get; set; }
