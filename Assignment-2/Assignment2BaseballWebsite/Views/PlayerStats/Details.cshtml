@@ -1,0 +1,54 @@
+﻿@model Assignment2BaseballWebsite.Models.PlayerStats
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PlayerStats</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Hits)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Hits)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Doubles)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Doubles)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Triples)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Triples)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HomeRuns)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HomeRuns)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RunsBattedIn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RunsBattedIn)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.playerInfo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.playerInfo.City)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.StatId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

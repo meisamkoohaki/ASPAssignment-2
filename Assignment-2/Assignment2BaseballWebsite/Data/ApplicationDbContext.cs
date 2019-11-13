@@ -16,5 +16,6 @@ namespace Assignment2BaseballWebsite.Data
         public DbSet<Assignment2BaseballWebsite.Models.Schedule> Schedule { get; set; }
         public DbSet<Assignment2BaseballWebsite.Models.TeamInfo> TeamInfo { get; set; }
         public DbSet<Assignment2BaseballWebsite.Models.Register> Register { get; set; }
+        public DbSet<Assignment2BaseballWebsite.Models.PlayerStats> PlayerStats { get; set; }
     }
 }
