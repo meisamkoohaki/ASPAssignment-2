@@ -48,7 +48,7 @@ namespace Assignment2BaseballWebsite.Controllers
         // GET: Schedules/Create
         public IActionResult Create()
         {
-            ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "HomeField");
+            ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "TeamName");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace Assignment2BaseballWebsite.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "HomeField", schedule.TeamInfoId);
+            ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "TeamName", schedule.TeamInfoId);
             return View(schedule);
         }
 
@@ -82,7 +82,7 @@ namespace Assignment2BaseballWebsite.Controllers
             {
                 return NotFound();
             }
-            ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "HomeField", schedule.TeamInfoId);
+            ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "TeamName", schedule.TeamInfoId);
             return View(schedule);
         }
 
@@ -118,7 +118,7 @@ namespace Assignment2BaseballWebsite.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "HomeField", schedule.TeamInfoId);
+            ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "TeamName", schedule.TeamInfoId);
             return View(schedule);
         }
 
