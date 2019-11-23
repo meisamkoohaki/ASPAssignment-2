@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Assignment2BaseballWebsite.Data;
 using Assignment2BaseballWebsite.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Assignment2BaseballWebsite.Controllers
 {
+
     public class RegistersController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -20,6 +22,7 @@ namespace Assignment2BaseballWebsite.Controllers
         }
 
         // GET: Registers
+        
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Register.Include(r => r.teamInfo);
@@ -48,7 +51,7 @@ namespace Assignment2BaseballWebsite.Controllers
         // GET: Registers/Create
         public IActionResult Create()
         {
-            ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "HomeField");
+            ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "TeamName");
             return View();
         }
 
@@ -65,7 +68,7 @@ namespace Assignment2BaseballWebsite.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "HomeField", register.TeamInfoId);
+            ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "TeamName", register.TeamInfoId);
             return View(register);
         }
 
@@ -82,7 +85,7 @@ namespace Assignment2BaseballWebsite.Controllers
             {
                 return NotFound();
             }
-            ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "HomeField", register.TeamInfoId);
+            ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "TeamName", register.TeamInfoId);
             return View(register);
         }
 
@@ -118,7 +121,7 @@ namespace Assignment2BaseballWebsite.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "HomeField", register.TeamInfoId);
+            ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "TeamName", register.TeamInfoId);
             return View(register);
         }
 

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Assignment2BaseballWebsite.Data;
 using Assignment2BaseballWebsite.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Assignment2BaseballWebsite.Controllers
 {
@@ -22,7 +23,7 @@ namespace Assignment2BaseballWebsite.Controllers
         // GET: TeamInfoes
         public async Task<IActionResult> Index()
         {
-            return View(await _context.TeamInfo.ToListAsync());
+            return View(await _context.TeamInfo.Include(x=>x.PlayerInfo).ToListAsync());
         }
 
         // GET: TeamInfoes/Details/5
@@ -43,6 +44,7 @@ namespace Assignment2BaseballWebsite.Controllers
             return View(teamInfo);
         }
 
+        [Authorize]
         // GET: TeamInfoes/Create
         public IActionResult Create()
         {
@@ -52,6 +54,7 @@ namespace Assignment2BaseballWebsite.Controllers
         // POST: TeamInfoes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("TeamInfoId,TeamName,TeamLogoURL,TeamDivision,HomeField,TeamManager")] TeamInfo teamInfo)
@@ -66,6 +69,7 @@ namespace Assignment2BaseballWebsite.Controllers
         }
 
         // GET: TeamInfoes/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -84,6 +88,7 @@ namespace Assignment2BaseballWebsite.Controllers
         // POST: TeamInfoes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("TeamInfoId,TeamName,TeamLogoURL,TeamDivision,HomeField,TeamManager")] TeamInfo teamInfo)
@@ -117,6 +122,7 @@ namespace Assignment2BaseballWebsite.Controllers
         }
 
         // GET: TeamInfoes/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -135,6 +141,7 @@ namespace Assignment2BaseballWebsite.Controllers
         }
 
         // POST: TeamInfoes/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

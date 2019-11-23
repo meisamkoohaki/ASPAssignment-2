@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Assignment2BaseballWebsite.Data;
 using Assignment2BaseballWebsite.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Assignment2BaseballWebsite.Controllers
 {
@@ -46,6 +47,7 @@ namespace Assignment2BaseballWebsite.Controllers
         }
 
         // GET: Schedules/Create
+        [Authorize]
         public IActionResult Create()
         {
             ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "TeamName");
@@ -55,11 +57,13 @@ namespace Assignment2BaseballWebsite.Controllers
         // POST: Schedules/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ScheduleId,HomeTeamScore,AwayTeamScore,GameDate,Time,TeamInfoId")] Schedule schedule)
         {
-            if (ModelState.IsValid)
+     
+            if (ModelState.IsValid && schedule.AwayTeamScore >= 0 && schedule.HomeTeamScore >= 0)
             {
                 _context.Add(schedule);
                 await _context.SaveChangesAsync();
@@ -67,9 +71,11 @@ namespace Assignment2BaseballWebsite.Controllers
             }
             ViewData["TeamInfoId"] = new SelectList(_context.TeamInfo, "TeamInfoId", "TeamName", schedule.TeamInfoId);
             return View(schedule);
+
         }
 
         // GET: Schedules/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -89,11 +95,12 @@ namespace Assignment2BaseballWebsite.Controllers
         // POST: Schedules/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ScheduleId,HomeTeamScore,AwayTeamScore,GameDate,Time,TeamInfoId")] Schedule schedule)
         {
-            if (id != schedule.ScheduleId)
+            if (id != schedule.ScheduleId && schedule.AwayTeamScore >= 0 && schedule.HomeTeamScore >= 0)
             {
                 return NotFound();
             }
@@ -123,6 +130,7 @@ namespace Assignment2BaseballWebsite.Controllers
         }
 
         // GET: Schedules/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -142,6 +150,7 @@ namespace Assignment2BaseballWebsite.Controllers
         }
 
         // POST: Schedules/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

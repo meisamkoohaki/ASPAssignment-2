@@ -8,6 +8,7 @@
 
 
 <table class="table">
+
     <thead>
         <tr>
             <th>
@@ -52,7 +53,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.playerInfo.City)
             </td>
-            
+            <a asp-action="Edit" asp-route-id="@item.StatId">Edit</a>
+            <a asp-action="Details" asp-route-id="@item.StatId">Details</a>
+            <a asp-action="Delete" asp-route-id="@item.StatId">Delete</a>
         </tr>
 }
     </tbody>

@@ -18,36 +18,40 @@
 <p>
     <a asp-action="Create">Create </a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.HomeTeamScore)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AwayTeamScore)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GameDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Time)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.teamInfo)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+@foreach (var item in Model)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.HomeTeamScore)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AwayTeamScore)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GameDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Time)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HomeTeamScore)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AwayTeamScore)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.HomeTeamScore)
+                    @Html.DisplayFor(modelItem => item.teamInfo.TeamName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.AwayTeamScore)
+                    @Html.DisplayFor(modelItem => item.teamInfo.TeamName)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.GameDate)
@@ -56,7 +60,11 @@
                     @Html.DisplayFor(modelItem => item.Time)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.teamInfo.HomeField)
+                    @Html.DisplayFor(modelItem => item.HomeTeamScore)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AwayTeamScore)
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.ScheduleId">Edit</a>
@@ -65,14 +73,7 @@
                 </td>
             </tr>
 
-            <div>
-                <p>
-                    add Standings table here.   It will read which team from the schedule has the highest score.  Team with higher score get awarded a win and the team with the lower score gets awarded a loss.  These will need to be updated into the standings table and the standings table should be ordered by points highest team is first.
-                </p>
-            </div>
-            <div>
-                <p>The table should have columns for team name / Wins / Loses</p>
-            </div>
-        }
-    </tbody>
-</table>
+
+        </tbody>
+    </table>
+}
