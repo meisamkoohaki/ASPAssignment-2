@@ -1,7 +1,7 @@
 ﻿@model Assignment2BaseballWebsite.Models.Schedule
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit Game Schedule";
 }
 
 <h2>Edit</h2>
@@ -10,43 +10,43 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="ScheduleId" />
             <div class="form-group">
-                <label asp-for="HomeTeamScore" class="control-label"></label>
-                <input asp-for="HomeTeamScore" class="form-control" />
-                <span asp-validation-for="HomeTeamScore" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AwayTeamScore" class="control-label"></label>
-                <input asp-for="AwayTeamScore" class="form-control" />
-                <span asp-validation-for="AwayTeamScore" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="GameDate" class="control-label"></label>
-                <input asp-for="GameDate" class="form-control" />
-                <span asp-validation-for="GameDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Time" class="control-label"></label>
-                <input asp-for="Time" class="form-control" />
-                <span asp-validation-for="Time" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TeamInfoId" class="control-label"></label>
+                <label asp-for="TeamInfoId" class="control-label">Home team</label>
                 <select asp-for="TeamInfoId" class="form-control" asp-items="ViewBag.TeamInfoId"></select>
-                <span asp-validation-for="TeamInfoId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <label asp-for="TeamInfoId" class="control-label">Away team</label>
+                <select asp-for="TeamInfoId" class="form-control" asp-items="ViewBag.TeamInfoId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="GameDate" class="control-label">Game date</label>
+                <input asp-for="GameDate" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Time" class="control-label">Started Time</label>
+                <input asp-for="Time" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="HomeTeamScore" class="control-label">Home team score</label>
+                <input asp-for="HomeTeamScore" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="AwayTeamScore" class="control-label">Away team score</label>
+                <input asp-for="AwayTeamScore" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-default" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div id="back">
+    <p>
+        <a class="back-button" asp-action="Index">Back to List</a>
+    </p>
 </div>
 
 @section Scripts {

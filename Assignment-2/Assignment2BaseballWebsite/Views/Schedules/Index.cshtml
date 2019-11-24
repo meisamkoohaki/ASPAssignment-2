@@ -16,64 +16,67 @@
 </div>
 
 <p>
-    <a asp-action="Create">Create </a>
+    <a class="add-button" asp-action="Create">Add A Schedule</a>
 </p>
-@foreach (var item in Model)
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.HomeTeamScore)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.AwayTeamScore)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.GameDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Time)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.HomeTeamScore)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.AwayTeamScore)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
+<div id="div-sch">
 
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.teamInfo.TeamName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.teamInfo.TeamName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.GameDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Time)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HomeTeamScore)
+    @foreach (var item in Model)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.HomeTeamScore)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AwayTeamScore)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.GameDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Time)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.HomeTeamScore)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AwayTeamScore)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
 
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AwayTeamScore)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.ScheduleId">Edit</a>
-                    <a asp-action="Details" asp-route-id="@item.ScheduleId">Details</a>
-                    <a asp-action="Delete" asp-route-id="@item.ScheduleId">Delete</a>
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.teamInfo.TeamName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.teamInfo.TeamName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GameDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Time)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HomeTeamScore)
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AwayTeamScore)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ScheduleId">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.ScheduleId">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.ScheduleId">Delete</a>
+                    </td>
+                </tr>
 
 
-        </tbody>
-    </table>
-}
+            </tbody>
+        </table>
+    }
+</div>

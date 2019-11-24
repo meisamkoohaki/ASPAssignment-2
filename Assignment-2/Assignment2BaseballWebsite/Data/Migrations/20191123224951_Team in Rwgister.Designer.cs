@@ -4,14 +4,16 @@ using Assignment2BaseballWebsite.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Assignment2BaseballWebsite.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191123224951_Team in Rwgister")]
+    partial class TeaminRwgister
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -116,7 +118,8 @@ namespace Assignment2BaseballWebsite.Data.Migrations
 
                     b.Property<int>("TeamInfoId");
 
-                    b.Property<string>("Time");
+                    b.Property<string>("Time")
+                        .IsRequired();
 
                     b.HasKey("ScheduleId");
 

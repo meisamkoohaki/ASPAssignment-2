@@ -15,11 +15,10 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
-    <link href="~/StyleSheet.css" rel="stylesheet" />
-
     <div id="logo">
         <img src="../images/header2.png" id="header_logo" alt="BLUE GEEKS BASEBALL CLUB">
     </div>
+    <link href="~/StyleSheet.css" rel="stylesheet" />
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -53,7 +52,7 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
+        <footer id="foot">
             <p>&copy; 2019 - Assignment2BaseballWebsite</p>
         </footer>
     </div>
@@ -78,7 +77,8 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
-
-    @RenderSection("Scripts", required: false)
+    
+        @RenderSection("Scripts", required: false)
+  
 </body>
 </html>

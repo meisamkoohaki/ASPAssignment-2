@@ -1,48 +1,78 @@
-﻿@model Assignment2BaseballWebsite.Models.Schedule
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Game Details</title>
+    @model Assignment2BaseballWebsite.Models.Schedule
 
-@{
-    ViewData["Title"] = "Details";
-}
+    <style>
 
-<h2>Details</h2>
+        #sch {
+            position: relative;
+            top: 100px;
+            display: inline;
+            text-align: center;
+            font-size:28px;
+            font-weight: 800;
+        }
 
-<div>
-    <h4>Schedule</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.HomeTeamScore)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.HomeTeamScore)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.AwayTeamScore)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.AwayTeamScore)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.GameDate)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.GameDate)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Time)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Time)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.teamInfo)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.teamInfo.HomeField)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.ScheduleId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+        #score1 {
+            margin-left: 15%;
+        }     
+        #score2 {
+            margin-left: 10%;
+        }     
+        #score3 {
+            margin-left: 10%;
+        }    
+        #score4 {
+            margin-left: 10%;
+        }
+        #datch {
+            margin-left: 10%;
+        }
+        #detail {
+            position: relative;
+            margin-top: 300px;
+            margin-left: 30%;
+        }
+
+    </style>
+    <div id="logo">
+        <img src="../images/header2.png" id="header_logo" alt="BLUE GEEKS BASEBALL CLUB">
+    </div>
+</head>
+<body>
+    <h2>Game Details</h2>
+        <hr />
+        <div id="sch">
+            <label id="score1">@Html.DisplayFor(model => model.teamInfo.TeamName)</label>
+            <label id="score2">@Html.DisplayFor(model => model.HomeTeamScore)</label>
+            <label id="datch">-</label>
+            <label id="score3"> @Html.DisplayFor(model => model.AwayTeamScore)</label>
+            <label id="score4">@Html.DisplayFor(model => model.teamInfo.TeamName)</label>
+        </div>
+        <div id="detail">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.GameDate)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.GameDate)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Time)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Time)
+                </dd>
+            </dl>
+        </div>
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model.ScheduleId">Edit</a> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+</body>
+</html>
+
+
+
+ </div>

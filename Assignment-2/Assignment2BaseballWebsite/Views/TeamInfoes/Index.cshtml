@@ -5,64 +5,69 @@
 }
 
 <h2>Team Information</h2>
-@foreach (var item in Model)
-{
+<p>
+    <a class="add-button" asp-action="Create">Add A Team</a>
+</p>
+<div id="div-sch">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.TeamName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.TeamLogoURL)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.TeamDivision)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.HomeField)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.TeamManager)
-                </th>
-                <th>
-                    Players
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TeamName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TeamLogoURL)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TeamDivision)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HomeField)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TeamManager)
-                </td>
-                <td>
-                    @foreach (var player in item.PlayerInfo)
-                    {
-                    @Html.DisplayFor(modelItem => player.FirstName)
-                    }
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.TeamInfoId">Edit</a>
-                    <a asp-action="Details" asp-route-id="@item.TeamInfoId">Details</a>
-                    <a asp-action="Delete" asp-route-id="@item.TeamInfoId">Delete</a>
-                </td>
+    @foreach (var item in Model)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TeamName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TeamLogoURL)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TeamDivision)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.HomeField)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TeamManager)
+                    </th>
+                    <th>
+                        Players
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TeamName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TeamLogoURL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TeamDivision)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HomeField)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TeamManager)
+                    </td>
+                    <td>
+                        @foreach (var player in item.PlayerInfo)
+                        {
+                            @Html.DisplayFor(modelItem => player.FirstName)
+                        }
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.TeamInfoId">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.TeamInfoId">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.TeamInfoId">Delete</a>
+                    </td>
 
-            </tr>
+                </tr>
 
-        </tbody>
-    </table>
-}
+            </tbody>
+        </table>
+    }
+</div>

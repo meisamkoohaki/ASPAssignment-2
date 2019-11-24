@@ -1,6 +1,60 @@
-﻿body {
-
+﻿.add-button, .back-button {
+    padding: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 20px !important;
+    font-family: Helvetica, 'Times New Roman', sans-serif;
+    font-weight: bold;
+    background-color: #4B0082;
+    color: white;
+    border-right: 5px solid #BA55D3;
+    border-bottom: 5px solid #BA55D3;
+    border-left-width: 0px;
+    border-top-width: 0px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    position: relative;
+    top: 50px;
+    text-decoration: none;
+    text-shadow: 1px 1px black;
 }
-#logo {
 
+.back-button {
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+}
+
+.add-button:hover, .back-button:hover {
+    text-decoration: none;
+    color: #4B0082;
+    background-color: #BA55D3;
+    text-shadow: 1px 1px white;
+    border-right: 0px solid white;
+    border-bottom: 0px solid white;
+    border-left: 5px solid #4B0082;
+    border-top: 5px solid #4B0082;
+}
+
+#div-sch {
+    position: relative;
+    top: 150px;
+}
+
+#back {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#foot {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: darkgreen;
+    color: white;
+    text-align: center;
 }

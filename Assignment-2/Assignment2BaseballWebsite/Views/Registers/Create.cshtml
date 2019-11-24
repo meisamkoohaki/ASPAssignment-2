@@ -1,94 +1,171 @@
-﻿@model Assignment2BaseballWebsite.Models.Register
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    @model Assignment2BaseballWebsite.Models.Register
 
-@{
-    ViewData["Title"] = "Create";
-}
+    <title>Register Page</title>
 
-<h4 id="player-registration"> Player Registration </h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="Gender" class="control-label"></label>
-                <input asp-for="Gender" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="BirthMonth" class="control-label"></label>
-                <input asp-for="BirthMonth" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="BirthDay" class="control-label"></label>
-                <input asp-for="BirthDay" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="BirthYear" class="control-label"></label>
-                <input asp-for="BirthYear" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="StreetNumber" class="control-label"></label>
-                <input asp-for="StreetNumber" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="StreetName" class="control-label"></label>
-                <input asp-for="StreetName" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="City" class="control-label"></label>
-                <input asp-for="City" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="PostalCode" class="control-label"></label>
-                <input asp-for="PostalCode" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="PhoneNumber" class="control-label"></label>
-                <input asp-for="PhoneNumber" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="EmailAddress" class="control-label"></label>
-                <input asp-for="EmailAddress" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="EmergencyFirstName" class="control-label"></label>
-                <input asp-for="EmergencyFirstName" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="EmergencyLastName" class="control-label"></label>
-                <input asp-for="EmergencyLastName" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="EmergencyRelationship" class="control-label"></label>
-                <input asp-for="EmergencyRelationship" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="EmergencyPhoneNumber" class="control-label"></label>
-                <input asp-for="EmergencyPhoneNumber" class="form-control" />
-            </div>           
-            <div class="form-group">
-                <label asp-for="TeamInfoId" class="control-label">Team</label>
-                <select asp-for="TeamInfoId" class="form-control" asp-items="ViewBag.TeamInfoId"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </form>
+    <style>
+        body {
+            background-color: #fcfff8;
+            background-image: url('/../images/ground1.jpg');
+            background-position: 50% 130px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            height: 1500px;
+        }
+
+        #logo {
+            width: 100%;
+            height: auto;
+            position: fixed;
+            align-content: center;
+            margin-left: -2%;
+            display: block;
+        }
+
+        #header_logo {
+            background-color: green;
+        }
+
+        .register-wrapper {
+            background-color: #566433;
+            padding-right: 10%;
+            padding-left: 10%;
+            margin-top: 100px;
+            color: white;
+            width: 120%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            text-align: left;
+            padding-top: 5px;
+            padding-bottom: 10px;
+            font-size: 28px;
+            margin-left: 5px;
+            border-bottom: solid 3px;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+    </style>
+    <div id="logo">
+        <img src="../images/header3-1.png" id="header_logo" alt="BLUE GEEKS BASEBALL CLUB">
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+</head>
+<body>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="register-wrapper">
+                    <h1>Register Online</h1>
+                    <h3 class="register-sub-title">Player Details</h3>
+                    <div class="form-group">
+                        <label asp-for="FirstName" class="control-label"></label>
+                        <input asp-for="FirstName" class="form-control" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LastName" class="control-label"></label>
+                        <input asp-for="LastName" class="form-control" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Gender" class="control-label"></label>
+                        <input asp-for="Gender" class="form-control" />
+                        <span asp-validation-for="Gender" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BirthMonth" class="control-label"></label>
+                        <input asp-for="BirthMonth" class="form-control" />
+                        <span asp-validation-for="BirthMonth" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BirthDay" class="control-label"></label>
+                        <input asp-for="BirthDay" class="form-control" />
+                        <span asp-validation-for="BirthDay" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BirthYear" class="control-label"></label>
+                        <input asp-for="BirthYear" class="form-control" />
+                        <span asp-validation-for="BirthYear" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="register-wrapper">
+                    <h3 class="register-sub-title">Players Address</h3>
+                    <div class="form-group">
+                        <label asp-for="StreetNumber" class="control-label"></label>
+                        <input asp-for="StreetNumber" class="form-control" />
+                        <span asp-validation-for="StreetNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="StreetName" class="control-label"></label>
+                        <input asp-for="StreetName" class="form-control" />
+                        <span asp-validation-for="StreetName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="City" class="control-label"></label>
+                        <input asp-for="City" class="form-control" />
+                        <span asp-validation-for="City" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PostalCode" class="control-label"></label>
+                        <input asp-for="PostalCode" class="form-control" />
+                        <span asp-validation-for="PostalCode" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="register-wrapper">
+                    <h3 class="register-sub-title">Contact Information</h3>
+                    <div class="form-group">
+                        <label asp-for="PhoneNumber" class="control-label"></label>
+                        <input asp-for="PhoneNumber" class="form-control" />
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EmailAddress" class="control-label"></label>
+                        <input asp-for="EmailAddress" class="form-control" />
+                        <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="register-wrapper">
+                    <h3 class="register-sub-title">Emergency Contact</h3>
+                    <div class="form-group">
+                        <label asp-for="EmergencyFirstName" class="control-label"></label>
+                        <input asp-for="EmergencyFirstName" class="form-control" />
+                        <span asp-validation-for="EmergencyFirstName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EmergencyLastName" class="control-label"></label>
+                        <input asp-for="EmergencyLastName" class="form-control" />
+                        <span asp-validation-for="EmergencyLastName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EmergencyRelationship" class="control-label"></label>
+                        <input asp-for="EmergencyRelationship" class="form-control" />
+                        <span asp-validation-for="EmergencyRelationship" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EmergencyPhoneNumber" class="control-label"></label>
+                        <input asp-for="EmergencyPhoneNumber" class="form-control" />
+                        <span asp-validation-for="EmergencyPhoneNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TeamInfoId" class="control-label">Team</label>
+                        <select asp-for="TeamInfoId" class="form-control" asp-items="ViewBag.TeamInfoId"></select>
+                    </div>
+ 
+                    <div class="form-group">
+                        <input type="submit" value="Submit" class="btn btn-default" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</body>
+</html>
