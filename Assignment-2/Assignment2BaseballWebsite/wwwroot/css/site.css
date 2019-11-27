@@ -16,7 +16,7 @@
     display: block;
     overflow: hidden;
     background-color: #e1eef4;
-    mar
+ 
 }
 
 h1 {
@@ -64,7 +64,19 @@ h1 {
     padding-bottom:50px;
 }
 
+.table {
 
+   margin-bottom:10%;
+
+
+       text-align: left;
+    position: relative;
+    top: 200px;
+   padding-bottom:30px;
+    background-color: #566433;
+    color: white;
+    opacity:0.9;
+}
 
 
 

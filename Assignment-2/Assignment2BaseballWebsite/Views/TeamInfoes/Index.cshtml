@@ -4,24 +4,26 @@
     ViewData["Title"] = "Index";
 }
 
-    <style>
-        p {
-            font-weight: bold;
-            width: 80%;
-            font-family: "Arial", Times, sans-serif;
-            font-size: 24px;
-            margin-left: 10%;
-        }
-    </style>
+<style>
+    p {
+        font-weight: bold;
+        width: 80%;
+        font-family: "Arial", Times, sans-serif;
+        font-size: 24px;
+        margin-left: 10%;
+    }
+</style>
 
 <h2>Team Information</h2>
 <p>
     <a class="add-button" asp-action="Create">Add A Team</a>
 </p>
-<div class="home-title">
 
-    @foreach (var item in Model)
-    {
+
+@foreach (var item in Model)
+{
+  
+
         <table class="table">
             <thead>
                 <tr>
@@ -67,6 +69,7 @@
                         @foreach (var player in item.PlayerInfo)
                         {
                             @Html.DisplayFor(modelItem => player.FirstName)
+                            <br />
                         }
                     </td>
                     <td>
@@ -79,5 +82,6 @@
 
             </tbody>
         </table>
-    }
-</div>
+
+
+}
