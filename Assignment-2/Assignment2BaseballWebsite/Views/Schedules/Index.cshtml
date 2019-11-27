@@ -4,21 +4,22 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+    <style>
+        p {
+            font-weight: bold;
+            width: 80%;
+            font-family: "Arial", Times, sans-serif;
+            font-size: 24px;
+            margin-left: 10%;
+        }
 
-<div>
-    <p>
-        add Standings table here.   It will read which team from the schedule has the highest score.  Team with higher score get awarded a win and the team with the lower score gets awarded a loss.  These will need to be updated into the standings table and the standings table should be ordered by points highest team is first.
-    </p>
-</div>
-<div>
-    <p>The table should have columns for team name / Wins / Loses</p>
-</div>
+    </style>
 
+<h1></h1>
 <p>
     <a class="add-button" asp-action="Create">Add A Schedule</a>
 </p>
-<div id="div-sch">
+<div class="home-title">
 
     @foreach (var item in Model)
     {
