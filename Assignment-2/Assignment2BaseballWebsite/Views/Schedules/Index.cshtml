@@ -15,11 +15,11 @@
 
     </style>
 
-<h1></h1>
-<p>
-    <a class="add-button" asp-action="Create">Add A Schedule</a>
-</p>
-<div class="home-title">
+<h1>Results</h1>
+
+    
+
+<div>
 
     @foreach (var item in Model)
     {
@@ -69,7 +69,7 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.AwayTeamScore)
                     </td>
-                    <td>
+                    <td >
                         <a asp-action="Edit" asp-route-id="@item.ScheduleId">Edit</a>
                         <a asp-action="Details" asp-route-id="@item.ScheduleId">Details</a>
                         <a asp-action="Delete" asp-route-id="@item.ScheduleId">Delete</a>

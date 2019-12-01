@@ -65,7 +65,7 @@ namespace Assignment2BaseballWebsite.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RegisterId"] = new SelectList(_context.Register, "RegisterId", "City", playerStats.RegisterId);
+            ViewData["RegisterId"] = new SelectList(_context.Register, "RegisterId", "City", playerStats.playerInfo);
             return View(playerStats);
         }
 
@@ -82,7 +82,7 @@ namespace Assignment2BaseballWebsite.Controllers
             {
                 return NotFound();
             }
-            ViewData["RegisterId"] = new SelectList(_context.Register, "RegisterId", "City", playerStats.RegisterId);
+            ViewData["RegisterId"] = new SelectList(_context.Register, "RegisterId", "City", playerStats.playerInfo);
             return View(playerStats);
         }
 

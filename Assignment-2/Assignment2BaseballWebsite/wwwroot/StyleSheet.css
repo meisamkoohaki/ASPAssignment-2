@@ -1,23 +1,38 @@
 ﻿.add-button, .back-button {
-    padding: 15px;
-    padding-left: 40px;
-    padding-right: 40px;
-    font-size: 20px !important;
-    font-family: Helvetica, 'Times New Roman', sans-serif;
+    margin-top:10%;
+    -moz-box-shadow: inset 0px 2px 0px 0px #033452;
+    -webkit-box-shadow: inset 0px 2px 0px 0px #033452;
+    box-shadow: inset 0px 2px 0px 0px #033452;
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #bee3fa), color-stop(1, #468ccf) );
+    background: -moz-linear-gradient( center top, #bee3fa 5%, #468ccf 100% );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bee3fa', endColorstr='#468ccf');
+    background-color: #bee3fa;
+    -webkit-border-top-left-radius: 30px;
+    -moz-border-radius-topleft: 30px;
+    border-top-left-radius: 30px;
+    -webkit-border-top-right-radius: 30px;
+    -moz-border-radius-topright: 30px;
+    border-top-right-radius: 30px;
+    -webkit-border-bottom-right-radius: 30px;
+    -moz-border-radius-bottomright: 30px;
+    border-bottom-right-radius: 30px;
+    -webkit-border-bottom-left-radius: 30px;
+    -moz-border-radius-bottomleft: 30px;
+    border-bottom-left-radius: 30px;
+    text-indent: 0px;
+    border: 2px solid #3866a3;
+    display: inline-block;
+    color: #364b66;
+    font-family: Comic Sans MS;
+    font-size: 16px;
     font-weight: bold;
-    background-color: #4B0082;
-    color: white;
-    border-right: 5px solid #BA55D3;
-    border-bottom: 5px solid #BA55D3;
-    border-left-width: 0px;
-    border-top-width: 0px;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    position: relative;
-    top: 50px;
+    font-style: normal;
+    height: 38px;
+    line-height: 38px;
+    width: 155px;
     text-decoration: none;
-    text-shadow: 1px 1px black;
+    text-align: center;
+    text-shadow: 1px 1px 0px #7cacde;
 }
 
 .back-button {
@@ -27,21 +42,27 @@
     font-size: 16px;
 }
 
-.add-button:hover, .back-button:hover {
-    text-decoration: none;
-    color: #4B0082;
-    background-color: #BA55D3;
-    text-shadow: 1px 1px white;
-    border-right: 0px solid white;
-    border-bottom: 0px solid white;
-    border-left: 5px solid #4B0082;
-    border-top: 5px solid #4B0082;
+    .add-button:hover, .back-button:hover {
+        background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #468ccf), color-stop(1, #bee3fa) );
+        background: -moz-linear-gradient( center top, #468ccf 5%, #bee3fa 100% );
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#468ccf', endColorstr='#bee3fa');
+        background-color: #468ccf;
+    }
+
+.classname {
+   
 }
 
-#div-sch {
-    position: relative;
-    top: 150px;
-}
+    .classname:hover {
+        
+    }
+
+    .classname:active {
+        position: relative;
+        top: 1px;
+    }
+/* This button was generated using CSSButtonGenerator.com */
+
 
 #back {
     position: relative;

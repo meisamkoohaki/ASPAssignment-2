@@ -27,7 +27,7 @@ namespace Assignment2BaseballWebsite.Models
 
         public virtual int RegisterId { get; set; }
 
-
+      //  public virtual List<Register> PlayerInfo { get; set; }
 
 
     }
