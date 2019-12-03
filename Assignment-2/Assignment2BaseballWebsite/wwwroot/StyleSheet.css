@@ -70,12 +70,4 @@
     padding-bottom: 50px;
 }
 
-#foot {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: darkgreen;
-    color: white;
-    text-align: center;
-}
+

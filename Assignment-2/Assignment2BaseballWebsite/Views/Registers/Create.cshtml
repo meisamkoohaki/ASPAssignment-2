@@ -24,7 +24,10 @@
             padding-bottom: 20px;
         }
 
-       
+        .col-md-4{
+            margin-top:10%;
+        }
+
     </style>
 
 </head>
@@ -72,7 +75,7 @@
                         <span asp-validation-for="BirthYear" class="text-danger"></span>
                     </div>
                 </div>
-                <div class="register-wrapper">
+                <div class="register-wrapper1">
                     <h3 class="register-sub-title">Players Address</h3>
                     <div class="form-group">
                         <label asp-for="StreetNumber" class="control-label"></label>
@@ -95,7 +98,7 @@
                         <span asp-validation-for="PostalCode" class="text-danger"></span>
                     </div>
                 </div>
-                <div class="register-wrapper">
+                <div class="register-wrapper2">
                     <h3 class="register-sub-title">Contact Information</h3>
                     <div class="form-group">
                         <label asp-for="PhoneNumber" class="control-label"></label>
@@ -108,7 +111,7 @@
                         <span asp-validation-for="EmailAddress" class="text-danger"></span>
                     </div>
                 </div>
-                <div class="register-wrapper">
+                <div class="register-wrapper2">
                     <h3 class="register-sub-title">Emergency Contact</h3>
                     <div class="form-group">
                         <label asp-for="EmergencyFirstName" class="control-label"></label>
@@ -133,7 +136,7 @@
                     
  
                     <div class="form-group">
-                        <input type="submit" value="Submit" class="btn btn-default" />
+                        <input type="submit" value="Submit" class="add-button" />
                     </div>
                 </div>
             </form>

@@ -1,10 +1,10 @@
 ﻿
 body {
-    background-color: #e1eef4;
-    background-image: url('/../images/ground2.jpg');
+    background-color: #86b2f1;
+    background-image: url('/../images/ground.jpg');
     background-position: 50% 140px;
     background-repeat: no-repeat;
-    background-size: 100% 600px;
+    background-size: 100% 100%;
     background-attachment: fixed;
     height: 1500px;
 }
@@ -62,10 +62,13 @@ body {
 }
 
 h1 {
-    text-align: center;
-    padding-top: 40px;
-    font-size: 40px;
-    margin: 40px 0 40px 20px;
+   
+    margin-top: -50px;
+    text-align: left;
+    padding-top: 20px;
+    font-size: 35px;
+    margin-left: 20px;
+    font-family: 'Comic Sans MS', Novelty Fonts;
 }
 
 
@@ -73,20 +76,22 @@ h1 {
     text-align: left;
     position: relative;
     background-color: #566433;
-    top:200px;
+    top: 200px;
     color: white;
-    opacity:0.9;
+    opacity: 0.9;
+    font-size: 70px;
 }
 
 #header_logo{
     margin-left:10%;
 }
 
-#welcome {
-    font-size: 40px;
-    font-weight: 800;
+#welcome { 
     padding-top: 30px;
-    text-align:center;
+    text-align: center;   
+    font-size: 55px;
+    font-weight: 800;
+    font-family: 'Comic Sans MS', cursive;
 }
 
 
@@ -128,5 +133,62 @@ h1 {
     opacity: 0.9;
 }
 
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: darkgreen;
+    color: white;
+    text-align: center;
+    font-size: 1em;
+    font-family: 'Audiowide', cursive;
+    font-weight: 400;
+    margin-top: 60em;
+}
 
+.register-wrapper {
+    background-color: darkolivegreen;
+    padding-right: 20%;
+    padding-left: 10%;
+    margin-top: 100px;
+    margin-left: -135px;
+    color: white;
+    width: 120%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 40px;
+}
+
+.register-wrapper1 {
+    background-color: darkolivegreen;
+    padding-right: 10%;
+    padding-left: 10%;
+    margin-top: 100px;
+    margin-left: -135px;
+    color: white;
+    width: 120%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 40px;
+    position: relative;
+    left: 500px;
+    top: -727px;
+}
+
+.register-wrapper2 {
+    background-color: darkolivegreen;
+    padding-right: 10%;
+    padding-left: 10%;
+    margin-top: 100px;
+    margin-left: -135px;
+    color: white;
+    width: 120%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 40px;
+    position: relative;
+    left: 1000px;
+    top: -1410px;
+}
 
