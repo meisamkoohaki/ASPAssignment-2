@@ -21,7 +21,7 @@ namespace Assignment2BaseballWebsite.Models
 
         [Required]
         [Display(Name = "Gender")]
-        public virtual Char Gender { get; set; }
+        public virtual String Gender { get; set; }
 
         [Required]
         [Display(Name = "Birth Month")]
@@ -57,7 +57,7 @@ namespace Assignment2BaseballWebsite.Models
 
         [Required]
         [Display(Name = "Phone Number")]
-        public virtual int PhoneNumber { get; set; }
+        public virtual String PhoneNumber { get; set; }
 
         [Required]
         [Display(Name = "Email Address")]
@@ -79,7 +79,7 @@ namespace Assignment2BaseballWebsite.Models
 
         [Required]
         [Display(Name = "Phone Number")]
-        public virtual int EmergencyPhoneNumber { get; set; }
+        public virtual String EmergencyPhoneNumber { get; set; }
 
         public virtual int TeamInfoId { get; set; }
 
