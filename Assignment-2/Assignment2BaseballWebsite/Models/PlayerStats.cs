@@ -13,6 +13,10 @@ namespace Assignment2BaseballWebsite.Models
 
         public virtual int Hits { get; set; }
 
+        public virtual String FirstName { get; set; }
+
+        public virtual String LastName { get; set; }
+
         public virtual int Doubles { get; set; }
 
         public virtual int Triples { get; set; }
@@ -23,6 +27,7 @@ namespace Assignment2BaseballWebsite.Models
         [Display(Name = "Runs Batted In")]
         public virtual int RunsBattedIn { get; set; }
 
+        [Display(Name = "Player Name")]
         public virtual Register playerInfo { get; set; }
 
         public virtual int RegisterId { get; set; }

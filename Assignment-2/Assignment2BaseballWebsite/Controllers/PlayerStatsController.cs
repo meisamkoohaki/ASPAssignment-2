@@ -48,7 +48,7 @@ namespace Assignment2BaseballWebsite.Controllers
         // GET: PlayerStats/Create
         public IActionResult Create()
         {
-            ViewData["RegisterId"] = new SelectList(_context.Register, "RegisterId", "City");
+            ViewData["RegisterId"] = new SelectList(_context.Register, "RegisterId", "FirstName");
             return View();
         }
 
@@ -57,7 +57,7 @@ namespace Assignment2BaseballWebsite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("StatId,Hits,Doubles,Triples,HomeRuns,RunsBattedIn,RegisterId")] PlayerStats playerStats)
+        public async Task<IActionResult> Create([Bind("StatId,Hits,FirstName,LastName,Doubles,Triples,HomeRuns,RunsBattedIn,RegisterId")] PlayerStats playerStats)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +65,7 @@ namespace Assignment2BaseballWebsite.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RegisterId"] = new SelectList(_context.Register, "RegisterId", "City", playerStats.playerInfo);
+            ViewData["RegisterId"] = new SelectList(_context.Register, "RegisterId", "FirstName", playerStats.RegisterId);
             return View(playerStats);
         }
 
@@ -82,7 +82,7 @@ namespace Assignment2BaseballWebsite.Controllers
             {
                 return NotFound();
             }
-            ViewData["RegisterId"] = new SelectList(_context.Register, "RegisterId", "City", playerStats.playerInfo);
+            ViewData["RegisterId"] = new SelectList(_context.Register, "RegisterId", "FirstName", playerStats.RegisterId);
             return View(playerStats);
         }
 
@@ -91,7 +91,7 @@ namespace Assignment2BaseballWebsite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("StatId,Hits,Doubles,Triples,HomeRuns,RunsBattedIn,RegisterId")] PlayerStats playerStats)
+        public async Task<IActionResult> Edit(int id, [Bind("StatId,Hits,FirstName,LastName,Doubles,Triples,HomeRuns,RunsBattedIn,RegisterId")] PlayerStats playerStats)
         {
             if (id != playerStats.StatId)
             {
@@ -118,7 +118,7 @@ namespace Assignment2BaseballWebsite.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RegisterId"] = new SelectList(_context.Register, "RegisterId", "City", playerStats.RegisterId);
+            ViewData["RegisterId"] = new SelectList(_context.Register, "RegisterId", "FirstName", playerStats.RegisterId);
             return View(playerStats);
         }
 
