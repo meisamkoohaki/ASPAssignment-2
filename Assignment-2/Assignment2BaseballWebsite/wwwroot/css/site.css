@@ -7,6 +7,7 @@ body {
     background-size: 100% 100%;
     background-attachment: fixed;
     height: 1500px;
+    
 }
 
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
@@ -75,15 +76,30 @@ h1 {
 .home-title {
     text-align: left;
     position: relative;
-    background-color: #566433;
-    top: 200px;
-    color: white;
+    background-color: #e6e6ff;
+    margin-top: 5%;
+    width: 94%;
+    color: #565756;
+    padding:2%;
     opacity: 0.9;
     font-size: 70px;
+    border-width:3px;
+    border-style:solid;
+    border-color: black;
 }
 
-#header_logo{
-    margin-left:10%;
+#imgWelcome {
+    position: absolute;
+    margin-top: -430px;
+    letter-spacing:6px;
+    text-align: left;
+    
+    font-family: 'Comic Sans MS', cursive;
+    font-size:36px;
+}
+
+#header_logo {
+    margin-left: 10%;
 }
 
 #welcome { 
@@ -113,13 +129,14 @@ h1 {
 .table {
 
 
-       text-align: left;
+    text-align: left;
     position: relative;
     top: 50px;
    padding-bottom:30px;
     background-color: #566433;
     color: white;
     opacity:0.9;
+    
 }
 
 .schedule-table {
@@ -131,6 +148,10 @@ h1 {
     background-color: #5e5a56;
     color: white;
     opacity: 0.9;
+}
+
+#welcome-p {
+    color: #565756;
 }
 
 footer {
@@ -164,7 +185,7 @@ footer {
     background-color: darkolivegreen;
     padding-right: 10%;
     padding-left: 10%;
-    margin-top: 100px;
+    margin-top: 220px;
     margin-left: -135px;
     color: white;
     width: 120%;
@@ -176,11 +197,49 @@ footer {
     top: -727px;
 }
 
+.register-submit {
+    margin-top: 10%;
+    -moz-box-shadow: inset 0px 2px 0px 0px #033452;
+    -webkit-box-shadow: inset 0px 2px 0px 0px #033452;
+    box-shadow: inset 0px 2px 0px 0px #033452;
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #bee3fa), color-stop(1, #468ccf) );
+    background: -moz-linear-gradient( center top, #bee3fa 5%, #468ccf 100% );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bee3fa', endColorstr='#468ccf');
+    background-color: #bee3fa;
+    -webkit-border-top-left-radius: 30px;
+    -moz-border-radius-topleft: 30px;
+    border-top-left-radius: 30px;
+    -webkit-border-top-right-radius: 30px;
+    -moz-border-radius-topright: 30px;
+    border-top-right-radius: 30px;
+    -webkit-border-bottom-right-radius: 30px;
+    -moz-border-radius-bottomright: 30px;
+    border-bottom-right-radius: 30px;
+    -webkit-border-bottom-left-radius: 30px;
+    -moz-border-radius-bottomleft: 30px;
+    border-bottom-left-radius: 30px;
+    text-indent: 0px;
+    border: 2px solid #3866a3;
+    display: inline-block;
+    color: #364b66;
+    font-family: Comic Sans MS;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    height: 50px;
+    line-height: 38px;
+    width: 155px;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 1px 1px 0px #7cacde;
+    margin-left:25%;
+}
+
 .register-wrapper2 {
     background-color: darkolivegreen;
     padding-right: 10%;
     padding-left: 10%;
-    margin-top: 100px;
+    margin-top: 30px;
     margin-left: -135px;
     color: white;
     width: 120%;
@@ -192,3 +251,88 @@ footer {
     top: -1410px;
 }
 
+#logo-id{
+    height:225px;
+    position:absolute;
+    margin-left:400px;
+}
+
+#home-picture{
+    width:75%;
+    margin-top:12%;
+}
+
+
+#home-pic {
+    padding: 2%;
+    background-color: #e6e6ff;
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+}
+
+
+/*Team Info Style*/
+#teamInfo-section {
+    background-color: lightcyan;
+    margin: 10% 2% 2% 2%;
+    padding: 1%;
+}
+
+.teamInfo-h1 {
+    text-align: center;
+    font-size: 32px;
+    letter-spacing: 5px;
+    font-weight: 700;
+}
+
+.teamInfo-h2 {
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 5px;
+    font-weight: 600;
+}
+
+.teamInfo-subHeader {
+    font-weight: 600;
+    font-size: 18px;
+    color: black;
+    text-align: center;
+}
+
+.teamInfo-content {
+    font-size: 16px;
+    color: black;
+    font-weight: 400;
+    text-align: center;
+}
+
+.teamInfo-Flex1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 7%;
+    margin-bottom: 7%;
+    border-bottom: 1px solid black;
+}
+
+.flex-col {
+    width: 30%;
+}
+
+.title-wrapper {
+    padding-bottom: 5%;
+    border-bottom: solid 2px black;
+}
+
+.teamInfo-content {
+    margin-top: 7%;
+}
+
+.teamInfo-player-content {
+    text-align: left;
+    padding-left: 10%;
+    font-size: 16px;
+    color: black;
+    padding-bottom: 7%
+}

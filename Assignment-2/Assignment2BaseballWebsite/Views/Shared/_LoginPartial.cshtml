@@ -7,7 +7,9 @@
 {
     <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm" class="navbar-right">
         <ul class="nav navbar-nav navbar-right">
-
+            <li>
+                <a asp-area="Identity" asp-controller="TeamInfoes" asp-action="Create">Add Team</a>
+            </li>
             <li>
                 <a asp-area="Identity" asp-controller="PlayerStats" asp-action="Create">Add Stats</a>
             </li>

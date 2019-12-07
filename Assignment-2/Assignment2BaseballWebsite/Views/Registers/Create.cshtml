@@ -35,6 +35,9 @@
     <hr />
     <div class="row">
         <div class="col-md-4">
+            <div>
+                <img src="~/images/logo2.png" id="logo-id" />
+            </div>
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="register-wrapper">
@@ -76,6 +79,7 @@
                     </div>
                 </div>
                 <div class="register-wrapper1">
+
                     <h3 class="register-sub-title">Players Address</h3>
                     <div class="form-group">
                         <label asp-for="StreetNumber" class="control-label"></label>
@@ -96,6 +100,9 @@
                         <label asp-for="PostalCode" class="control-label"></label>
                         <input asp-for="PostalCode" class="form-control" />
                         <span asp-validation-for="PostalCode" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <input type="submit" value="Submit" class="add-button register-submit"/>
                     </div>
                 </div>
                 <div class="register-wrapper2">
@@ -133,13 +140,13 @@
                         <input asp-for="EmergencyPhoneNumber" class="form-control" />
                         <span asp-validation-for="EmergencyPhoneNumber" class="text-danger"></span>
                     </div>
-                    
- 
-                    <div class="form-group">
-                        <input type="submit" value="Submit" class="add-button" />
-                    </div>
+
+
+
                 </div>
+                
             </form>
+            
         </div>
     </div>
     @section Scripts {

@@ -1,25 +1,31 @@
 ﻿<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Home Page</title>
     <style>
         p {
             color: white;
             font-weight: bold;
+            text-align:center;
             width: 80%;
             font-family: 'Comic Sans MS', cursive;
             font-size: 35px;
             margin-left: 10%;
+
         }
     </style>
 
 </head>
 <body>
+
+    <div id="home-picture">
+        <img src="~/images/night-lightsjpg.jpg" id="home-pic"/>
+        <p id="imgWelcome">Summer Is Better <br />Under The Lights</p>
+    </div>
     <div class="home-title">
-        <h1>Home Page</h1>
+        
         <h2 id="welcome">Welcome @User.Identity.Name!</h2>
 
 
-        <p>We are a public and independently run organization in Barrie providing adults with a intercity baseball league</p>
+        <p id="welcome-p">We are a public and independently run organization in Barrie providing adults with a intercity baseball league</p>
 
     </div>
 </body>

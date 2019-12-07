@@ -13,76 +13,57 @@
             font-size: 35px;
             margin-left: 10%;
         }
+
+
+
+
     </style>
 
 <h2>Team Information</h2>
-<p>
-    <a class="add-button" asp-action="Create">Add A Team</a>
-</p>
+
 
 
 @foreach (var item in Model)
 {
   
+    <section id="teamInfo-section">
+        <div class="title-wrapper">
+            <h1 class="teamInfo-h1">
+                @Html.DisplayFor(modelItem => item.TeamName)
+            </h1>
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.TeamName)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.TeamLogoURL)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.TeamDivision)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.HomeField)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.TeamManager)
-                    </th>
-                    <th>
-                       
-                    </th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TeamName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TeamLogoURL)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TeamDivision)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.HomeField)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TeamManager)
-                    </td>
-                    <td>
-                        @foreach (var player in item.PlayerInfo)
-                        {
-                            @Html.DisplayFor(modelItem => player.FirstName)
-                            <br />
-                        }
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.TeamInfoId">Edit</a>
-                        <a asp-action="Details" asp-route-id="@item.TeamInfoId">Details</a>
-                        <a asp-action="Delete" asp-route-id="@item.TeamInfoId">Delete</a>
-                    </td>
+            <h2 class="teamInfo-h2">
+                @Html.DisplayFor(modelItem => item.TeamDivision)
+            </h2>
+        </div>
+        <div class="teamInfo-Flex1">
+            <div class="flex-col">
+                <p class="teamInfo-subHeader">Home Field Location:</p>
+                <p class="teamInfo-content">@Html.DisplayFor(modelItem => item.HomeField)</p>
+            </div>
+            <div class="flex-col">
+                <p class="teamInfo-subHeader">Team Manager:</p>
+                <p class="teamInfo-content">@Html.DisplayFor(modelItem => item.TeamManager)</p>
+            </div>
+        </div>
 
-                </tr>
+        <div class="teamInfo-players">
+            <p class="teamInfo-subHeader">Players:</p>
+            <p class="teamInfo-player-content">
+                @foreach (var player in item.PlayerInfo)
+                {
+                    @Html.DisplayFor(modelItem => player.FirstName)
+                    <br />
+                }
+                    </p>
 
-            </tbody>
-        </table>
+        </div>
+
+
+
+    </section>
+
+       
 
 
 }
