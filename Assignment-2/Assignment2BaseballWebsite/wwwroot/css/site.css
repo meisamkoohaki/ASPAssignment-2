@@ -127,27 +127,25 @@ h1 {
 }
 
 .table {
-
-
     text-align: left;
     position: relative;
     top: 50px;
-   padding-bottom:30px;
+    padding-bottom: 30px;
     background-color: #566433;
-    color: white;
-    opacity:0.9;
-    
+    opacity: 0.9;
+    background-color: #e6e6ff;
+ 
 }
 
 .schedule-table {
-    margin-bottom: 10%;
+    width:100%;
     text-align: left;
     position: relative;
-    top: 200px;
-    padding:30px;
-    background-color: #5e5a56;
-    color: white;
+    top: 50px;
+    padding-bottom: 30px;
+    background-color: #566433;
     opacity: 0.9;
+    background-color: #e6e6ff;
 }
 
 #welcome-p {
@@ -274,9 +272,10 @@ footer {
 
 /*Team Info Style*/
 #teamInfo-section {
-    background-color: lightcyan;
+    background-color: #e6e6ff;
     margin: 10% 2% 2% 2%;
     padding: 1%;
+    opacity:0.9;
 }
 
 .teamInfo-h1 {
@@ -335,4 +334,28 @@ footer {
     font-size: 16px;
     color: black;
     padding-bottom: 7%
+}
+
+.TeamInfo-players-flex {
+    display: flex;
+    flex-direction: row;
+    margin:3% 7% 0 20%;
+    
+   
+    
+}
+
+.flex-col-players {
+    width: 10%;
+    margin-left:10%;
+}
+
+.teamInfo-content-player {
+    text-align: left;
+    padding-left: 10%;
+    font-size: 16px;
+    color: black;
+    padding-bottom: 7%;
+    font-weight:300;
+    margin-right:15%;
 }

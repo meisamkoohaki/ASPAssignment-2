@@ -26,6 +26,8 @@ namespace Assignment2BaseballWebsite.Models
         public virtual String TeamManager { get; set; }
 
         public virtual List<Register> PlayerInfo { get; set; }
+
+
     }
 }
 

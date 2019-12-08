@@ -25,43 +25,52 @@
 
 @foreach (var item in Model)
 {
-  
-    <section id="teamInfo-section">
-        <div class="title-wrapper">
-            <h1 class="teamInfo-h1">
-                @Html.DisplayFor(modelItem => item.TeamName)
-            </h1>
+                            //Team Information Dispaly
+        //TeamInfo Section and Header
+<section id="teamInfo-section">
+    <div class="title-wrapper">
+        <h1 class="teamInfo-h1">
+            @Html.DisplayFor(modelItem => item.TeamName)
+        </h1>
 
-            <h2 class="teamInfo-h2">
-                @Html.DisplayFor(modelItem => item.TeamDivision)
-            </h2>
+        <h2 class="teamInfo-h2">
+            @Html.DisplayFor(modelItem => item.TeamDivision)
+        </h2>
+    </div>
+    <!--Two Columns Displayed as Flex-->
+    <div class="teamInfo-Flex1">
+        <div class="flex-col">
+            <p class="teamInfo-subHeader">Home Field Location:</p>
+            <p class="teamInfo-content">@Html.DisplayFor(modelItem => item.HomeField)</p>
         </div>
-        <div class="teamInfo-Flex1">
-            <div class="flex-col">
-                <p class="teamInfo-subHeader">Home Field Location:</p>
-                <p class="teamInfo-content">@Html.DisplayFor(modelItem => item.HomeField)</p>
-            </div>
-            <div class="flex-col">
-                <p class="teamInfo-subHeader">Team Manager:</p>
-                <p class="teamInfo-content">@Html.DisplayFor(modelItem => item.TeamManager)</p>
-            </div>
+        <div class="flex-col">
+            <p class="teamInfo-subHeader">Team Manager:</p>
+            <p class="teamInfo-content">@Html.DisplayFor(modelItem => item.TeamManager)</p>
         </div>
-
-        <div class="teamInfo-players">
-            <p class="teamInfo-subHeader">Players:</p>
-            <p class="teamInfo-player-content">
+    </div>
+    <!--List of Player Names-->
+    <p class="teamInfo-subHeader">Players:</p>     
+    <div class="TeamInfo-players-flex">
+        <div class="flex-col-players">
+            <p class="teamInfo-content-player">
                 @foreach (var player in item.PlayerInfo)
                 {
                     @Html.DisplayFor(modelItem => player.FirstName)
                     <br />
                 }
-                    </p>
-
+            </p>
         </div>
-
-
-
-    </section>
+        <div class="flex-col-players">
+            <p class="teamInfo-content-player">
+                @foreach (var player in item.PlayerInfo)
+                {
+                    @Html.DisplayFor(modelItem => player.LastName)
+                    <br />
+                }
+            </p>
+        </div>
+    </div>
+</section>
 
        
 

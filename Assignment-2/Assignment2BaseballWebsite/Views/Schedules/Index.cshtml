@@ -27,10 +27,10 @@
             <thead>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.HomeTeamScore)
+                        Home Team                       
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.AwayTeamScore)
+                        Away Team
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.GameDate)
@@ -51,6 +51,7 @@
 
                 <tr>
                     <td>
+
                         @Html.DisplayFor(modelItem => item.teamInfo.TeamName)
                     </td>
                     <td>
@@ -69,11 +70,7 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.AwayTeamScore)
                     </td>
-                    <td >
-                        <a asp-action="Edit" asp-route-id="@item.ScheduleId">Edit</a>
-                        <a asp-action="Details" asp-route-id="@item.ScheduleId">Details</a>
-                        <a asp-action="Delete" asp-route-id="@item.ScheduleId">Delete</a>
-                    </td>
+                   
                 </tr>
 
 

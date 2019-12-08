@@ -4,14 +4,16 @@ using Assignment2BaseballWebsite.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Assignment2BaseballWebsite.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191208190917_updateScore")]
+    partial class updateScore
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -139,8 +141,6 @@ namespace Assignment2BaseballWebsite.Data.Migrations
                     b.Property<string>("HomeField")
                         .IsRequired();
 
-                    b.Property<int?>("ScheduleId");
-
                     b.Property<string>("TeamDivision")
                         .IsRequired();
 
@@ -153,8 +153,6 @@ namespace Assignment2BaseballWebsite.Data.Migrations
                         .IsRequired();
 
                     b.HasKey("TeamInfoId");
-
-                    b.HasIndex("ScheduleId");
 
                     b.ToTable("TeamInfo");
                 });
@@ -346,13 +344,6 @@ namespace Assignment2BaseballWebsite.Data.Migrations
                         .WithMany()
                         .HasForeignKey("TeamInfoId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("Assignment2BaseballWebsite.Models.TeamInfo", b =>
-                {
-                    b.HasOne("Assignment2BaseballWebsite.Models.Schedule")
-                        .WithMany("TeamsName")
-                        .HasForeignKey("ScheduleId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
