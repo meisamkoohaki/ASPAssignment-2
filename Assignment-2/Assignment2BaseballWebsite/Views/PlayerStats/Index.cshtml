@@ -12,9 +12,12 @@
 <table class="table">
     <thead>
         <tr>
-            
+
             <th>
                 @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Hits)
@@ -32,14 +35,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.RunsBattedIn)
             </th>
-
-            <th>
-                @Html.DisplayNameFor(model => model.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastName)
-            </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -48,6 +43,9 @@
 
             <td>
                 @Html.DisplayFor(modelItem => item.playerInfo.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.playerInfo.LastName)
             </td>
 
             <td>
@@ -72,11 +70,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.FirstName)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.StatId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.StatId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.StatId">Delete</a>
-            </td>
+            
         </tr>
 }
     </tbody>
