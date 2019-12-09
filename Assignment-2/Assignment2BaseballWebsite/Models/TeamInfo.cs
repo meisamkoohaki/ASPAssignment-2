@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace Assignment2BaseballWebsite.Models
         [Required]
         public virtual String TeamManager { get; set; }
 
+        [JsonIgnore]
         public virtual List<Register> PlayerInfo { get; set; }
 
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -83,6 +84,7 @@ namespace Assignment2BaseballWebsite.Models
 
         public virtual int TeamInfoId { get; set; }
 
+        [JsonIgnore]
         public virtual TeamInfo teamInfo { get; set; }
 
 

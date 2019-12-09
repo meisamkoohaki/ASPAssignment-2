@@ -6,7 +6,7 @@
 
     <style>
         p {
-            color: white;
+            color: black;
             font-weight: bold;
             width: 80%;
             font-family: 'Comic Sans MS', cursive;
@@ -19,23 +19,19 @@
 
     </style>
 
-<h2>Team Information</h2>
-
-
-
 @foreach (var item in Model)
 {
                             //Team Information Dispaly
         //TeamInfo Section and Header
 <section id="teamInfo-section">
     <div class="title-wrapper">
-        <h1 class="teamInfo-h1">
+        <p class="teamInfo-h1">
             @Html.DisplayFor(modelItem => item.TeamName)
-        </h1>
+        </p>
 
-        <h2 class="teamInfo-h2">
+        <p class="teamInfo-h2">
             @Html.DisplayFor(modelItem => item.TeamDivision)
-        </h2>
+        </p>
     </div>
     <!--Two Columns Displayed as Flex-->
     <div class="teamInfo-Flex1">
