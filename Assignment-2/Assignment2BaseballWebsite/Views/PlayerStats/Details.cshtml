@@ -3,31 +3,49 @@
 @{
     ViewData["Title"] = "Details";
 }
+<style>
+    dt{
+        font-size:28px;
+        width:30%;
+        
+        text-align:right;
+    }
 
-<h2>Details</h2>
+    dd{
+        font-size:20px;
+        margin-bottom:2%;
+        margin-left:32%;
+        text-align:left;
+    }
+</style>
+<h2>Game 
+    
+    Details</h2>
 
 <div>
     <h4>PlayerStats</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="details-wrapper">
+
+        <dt>
+            First Name:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.playerInfo.FirstName)
+        </dd>
+        <dt>
+            Last Name:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.playerInfo.LastName)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Hits)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Hits)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Doubles)
         </dt>
@@ -52,15 +70,10 @@
         <dd>
             @Html.DisplayFor(model => model.RunsBattedIn)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.playerInfo)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.playerInfo.City)
-        </dd>
+
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.StatId">Edit</a> |
+    <a asp-area="Identity" asp-action="Edit" asp-route-id="@Model.StatId">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

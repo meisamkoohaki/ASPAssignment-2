@@ -4,71 +4,82 @@
     ViewData["Title"] = "Index";
 }
 
-    <style>
-        p {
-            color: black;
-            font-weight: bold;
-            width: 80%;
-            font-family: 'Comic Sans MS', cursive;
-            font-size: 35px;
-            margin-left: 10%;
-        }
+<style>
+    p {
+        color: black;
+        font-weight: bold;
+        width: 80%;
+        font-family: 'Comic Sans MS', cursive;
+        font-size: 35px;
+        margin-left: 10%;
+    }
 
+    .infoLink{
+        font-size:16px;
+        color:lightcyan;
+        margin-left:50%;
+    }
 
-
-
-    </style>
+    .crudLinks{
+        width:800px;
+        text-align:center;
+    }
+</style>
 
 @foreach (var item in Model)
 {
-                            //Team Information Dispaly
-        //TeamInfo Section and Header
-<section id="teamInfo-section">
-    <div class="title-wrapper">
-        <p class="teamInfo-h1">
-            @Html.DisplayFor(modelItem => item.TeamName)
-        </p>
+    //Team Information Dispaly
+    //TeamInfo Section and Header
+    <section id="teamInfo-section">
+        <div class="title-wrapper">
+            <p class="teamInfo-h1">
+                @Html.DisplayFor(modelItem => item.TeamName)
+            </p>
 
-        <p class="teamInfo-h2">
-            @Html.DisplayFor(modelItem => item.TeamDivision)
-        </p>
-    </div>
-    <!--Two Columns Displayed as Flex-->
-    <div class="teamInfo-Flex1">
-        <div class="flex-col">
-            <p class="teamInfo-subHeader">Home Field Location:</p>
-            <p class="teamInfo-content">@Html.DisplayFor(modelItem => item.HomeField)</p>
-        </div>
-        <div class="flex-col">
-            <p class="teamInfo-subHeader">Team Manager:</p>
-            <p class="teamInfo-content">@Html.DisplayFor(modelItem => item.TeamManager)</p>
-        </div>
-    </div>
-    <!--List of Player Names-->
-    <p class="teamInfo-subHeader">Players:</p>     
-    <div class="TeamInfo-players-flex">
-        <div class="flex-col-players">
-            <p class="teamInfo-content-player">
-                @foreach (var player in item.PlayerInfo)
-                {
-                    @Html.DisplayFor(modelItem => player.FirstName)
-                    <br />
-                }
+            <p class="teamInfo-h2">
+                @Html.DisplayFor(modelItem => item.TeamDivision)
             </p>
         </div>
-        <div class="flex-col-players">
-            <p class="teamInfo-content-player">
-                @foreach (var player in item.PlayerInfo)
-                {
-                    @Html.DisplayFor(modelItem => player.LastName)
-                    <br />
-                }
-            </p>
+        <!--Two Columns Displayed as Flex-->
+        <div class="teamInfo-Flex1">
+            <div class="flex-col">
+                <p class="teamInfo-subHeader">Home Field Location:</p>
+                <p class="teamInfo-content">@Html.DisplayFor(modelItem => item.HomeField)</p>
+            </div>
+            <div class="flex-col">
+                <p class="teamInfo-subHeader">Team Manager:</p>
+                <p class="teamInfo-content">@Html.DisplayFor(modelItem => item.TeamManager)</p>
+            </div>
         </div>
-    </div>
-</section>
+        <!--List of Player Names-->
+        <p class="teamInfo-subHeader">Players:</p>
+        <div class="TeamInfo-players-flex">
+            <div class="flex-col-players">
+                <p class="teamInfo-content-player">
+                    @foreach (var player in item.PlayerInfo)
+                    {
+                        @Html.DisplayFor(modelItem => player.FirstName)
+                        <br />
+                    }
+                </p>
+            </div>
+            <div class="flex-col-players">
+                <p class="teamInfo-content-player">
+                    @foreach (var player in item.PlayerInfo)
+                    {
+                        @Html.DisplayFor(modelItem => player.LastName)
+                        <br />
+                    }
+                </p>
+                    <div class="crudLinks">
+                        <a class="infoLink" asp-area="Identity" asp-action="Edit" asp-route-id="@item.TeamInfoId">Edit</a>     <a class="infoLink" asp-area="Identity" asp-action="Delete" asp-route-id="@item.TeamInfoId">Delete</a>
+                    </div>
+                
+            </div>
+        </div>
+    </section>
 
-       
+
 
 
 }

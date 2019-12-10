@@ -90,6 +90,21 @@ h1 {
     border-color: black;
 }
 
+.details-wrapper {
+    text-align: left;
+    position: relative;
+    background-color: darkolivegreen;
+    margin-top: 5%;
+    width: 94%;
+    color: #fff;
+    padding: 2%;
+    opacity: 0.9;
+    font-size: 35px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+}
+
 #imgWelcome {
     position: absolute;
     margin-top: -430px;
@@ -149,8 +164,21 @@ h1 {
     background-color: darkolivegreen;
 }
 
+.player-table {
+    text-align: left;
+    position: relative;
+    top: 50px;
+    padding-bottom: 30px;
+    color: #fff;
+    opacity: 0.9;
+    width:95%;
+    background-color: darkolivegreen;
+    
+}
+
+
 .schedule-table {
-    width:100%;
+    width: 100%;
     text-align: left;
     position: relative;
     top: 50px;
@@ -371,4 +399,8 @@ footer {
     padding-bottom: 7%;
     font-weight:300;
     margin-right:15%;
+}
+
+.playerCrudLink {
+    color: lightsteelblue;
 }

@@ -14,68 +14,73 @@
             font-size: 35px;
             margin-left: 10%;
         }
+
+        .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
+            padding:13px;
+        }
+
+        .table{
+            margin-left:-175px
+        }
+        
+
     </style>
 
-<h2>Index</h2>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+    
 <table class="table">
     <thead>
         <tr>
-            <th>
+            <th class="player-th">
                 @Html.DisplayNameFor(model => model.FirstName)
             </th>
-            <th>
+            <th class="player-th">
                 @Html.DisplayNameFor(model => model.LastName)
             </th>
-            <th>
+            <th class="player-th">
                 @Html.DisplayNameFor(model => model.Gender)
             </th>
-            <th>
+            <th class="player-th">
                 @Html.DisplayNameFor(model => model.BirthMonth)
             </th>
-            <th>
+            <th class="player-th">
                 @Html.DisplayNameFor(model => model.BirthDay)
             </th>
-            <th>
+            <th class="player-th">
                 @Html.DisplayNameFor(model => model.BirthYear)
             </th>
-            <th>
+            <th class="player-th">
                 @Html.DisplayNameFor(model => model.StreetNumber)
             </th>
-            <th>
+            <th class="player-th">
                 @Html.DisplayNameFor(model => model.StreetName)
             </th>
-            <th>
+            <th class="player-th">
                 @Html.DisplayNameFor(model => model.City)
             </th>
-            <th>
+            <th class="player-th">
                 @Html.DisplayNameFor(model => model.PostalCode)
             </th>
-            <th>
+            <th class="player-th">
                 @Html.DisplayNameFor(model => model.PhoneNumber)
             </th>
-            <th>
+            <th class="player-th">
                 @Html.DisplayNameFor(model => model.EmailAddress)
             </th>
-            <th>
+            <th class="player-th">
                 @Html.DisplayNameFor(model => model.EmergencyFirstName)
             </th>
-            <th>
+            <th class="player-th">
                 @Html.DisplayNameFor(model => model.EmergencyLastName)
             </th>
-            <th>
+            <th class="player-th">
                 @Html.DisplayNameFor(model => model.EmergencyRelationship)
             </th>
-            <th>
+            <th class="player-th">
                 @Html.DisplayNameFor(model => model.EmergencyPhoneNumber)
             </th>
-            <th>
+            <th class="player-th">
                 @Html.DisplayNameFor(model => model.teamInfo)
-            </th>
-            <th></th>
+            </th>           
         </tr>
     </thead>
     <tbody>
@@ -133,9 +138,9 @@
                 @Html.DisplayFor(modelItem => item.teamInfo.HomeField)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.RegisterId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.RegisterId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.RegisterId">Delete</a>
+                <a class="playerCrudLink" asp-action="Details" asp-route-id="@item.RegisterId">Details</a>
+                <a class="playerCrudLink" asp-area="Identity" asp-action="Edit" asp-route-id="@item.RegisterId">Edit</a>
+                <a class="playerCrudLink" asp-area="Identity" asp-action="Delete" asp-route-id="@item.RegisterId">Delete</a>
             </td>
         </tr>
 }
