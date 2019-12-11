@@ -24,9 +24,10 @@ namespace Assignment2BaseballWebsiteTest
 
             using (var context = new ApplicationDbContext(options))
             {
-                context.TeamInfo.Add(new TeamInfo { TeamName = "Newmarket", TeamLogoURL = "", TeamDivision ="Adult",HomeField = "Stadium",TeamManager = "Andrew" }); 
+                context.TeamInfo.Add(new TeamInfo {  TeamInfoId = 1, TeamName = "Newmarket", TeamLogoURL = "", TeamDivision ="Adult",HomeField = "Stadium",TeamManager = "Andrew" }); 
                 context.Register.Add(new Register
                 {
+                    RegisterId = 1,
                     FirstName = "Meisam",
                     LastName = "Koohaki",
                     Gender = "male",
@@ -52,7 +53,7 @@ namespace Assignment2BaseballWebsiteTest
                     GameDate = new DateTime(2019, 05, 05, 13, 50, 22),
                     Time = "03:30",
                     TeamInfoId = 1
-                }); ; ;
+                });
                 context.PlayerStats.Add(new PlayerStats
                 {
                     StatId = 1,

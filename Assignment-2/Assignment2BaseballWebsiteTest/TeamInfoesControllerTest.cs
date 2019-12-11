@@ -23,6 +23,7 @@ namespace UnitTest1
 
             var teamInfo = new TeamInfo
             {
+                TeamInfoId = 2,
                 TeamName = "Aurora",
                 TeamLogoURL = "",
                 TeamDivision = "Under 18",
@@ -162,6 +163,7 @@ namespace UnitTest1
             var c = new TeamInfoesController(db);
             var teamInfoe = new TeamInfo
             {
+                TeamInfoId = 2,
                 TeamName = "Newmarket",
                 TeamLogoURL = "",
                 TeamDivision = "Adult",
@@ -170,13 +172,15 @@ namespace UnitTest1
             };
 
             //Act
-            var r = await c.Delete(1);
+            await c.Create(teamInfoe);
+
+            var r = await c.Delete(2);
 
             //Assert
             var result = Assert.IsType<ViewResult>(r);
             var model = Assert.IsAssignableFrom<TeamInfo>(result.ViewData.Model);
 
-            Assert.Equal(db.TeamInfo.Find(1), model);
+            Assert.Equal(db.TeamInfo.Find(2), model);
         }
     }
 }
