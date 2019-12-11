@@ -1,93 +1,168 @@
 ﻿@model IEnumerable<Assignment2BaseballWebsite.Models.PlayerStats>
 
+    <style>
+
+        
+        .stat-link {
+            color: lightsteelblue;
+        }
+
+        .playerCrudLink {
+            color: lightsteelblue;
+        }
+
+        .search-wrapper{
+            margin-top:5%;
+        }
+
+        .add-button{
+            margin-top:0;
+        }
+        b{
+            margin-left:6%;
+        }
+        
+    </style>
+
+<div class="container">
+    <div class="search-wrapper">
+        <b>Search By : </b>
+        <select id="SearchBy">
+            <option value="FirstName">FirstName</option>
+            <option value="LastName">LastName</option>
+            <option value="Hits">Hits</option>
+            <option value="Doubles">Doubles</option>
+            <option value="Triples">Triples</option>
+            <option value="HomeRuns">Home Runs</option>
+            <option value="RunsBatted In">Runs Batted In</option>
+        </select><br /><br />
+        @Html.TextBox("Search")<input type="submit" class="add-button" value="Search" /><br /><br />
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hits)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Doubles)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Triples)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HomeRuns)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RunsBattedIn)
+                </th>
+            </tr>
+        </thead>
+        <tbody id="DataSearching">
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.playerInfo.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.playerInfo.LastName)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Hits)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Doubles)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Triples)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HomeRuns)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RunsBattedIn)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#Search").keyup(function () {
+            var SearchBy = $("#SearchBy").val();
+            var SearchValue = $("#Search").val();
+            var SetData = $("#DataSearching");
+            SetData.html("");
+            $.ajax({
+                type: "post",
+                url: "/PlayerStats/GetSearchingData?SearchBy=" + SearchBy + "&SearchValue=" + SearchValue,
+                contentType: "html",
+                success: function (result) {
+                    if (reault.length == 0) {
+                        SetData.append('<tr style="color:red"><td colspan="3">No Match Data</td></tr>')
+                    }
+                    else {
+                        $.each(result, function (index, value) {
+                            var Data = "<tr>" +
+                                "<td>" +
+                                value.playerInfo.FirstName +
+                                "</td>" +
+                                "<td>" +
+                                value.playerInfo.LastName +
+                                "</td>" +
+
+                                "<td>" +
+                                value.Hits +
+                                "</td>" +
+                                "<td>" +
+                                value.Doubles +
+                                "</td>" +
+                                "<td>" +
+                                value.Triples +
+                                "</td>" +
+                                "<td>" +
+                                value.HomeRuns +
+                                "</td>" +
+                                "<td>" +
+                                value.RunsBattedIn +
+                                "</td>" +
+
+                                "<td>" +
+                                value.LastName +
+                                "</td>" +
+                                "<td>" +
+                                value.FirstName +
+                                "</td>";
+                            setData.append(Data);
+                        });
+                    }
+                }
+            });
+        });
+    });
+</script>
 @{
     ViewData["Title"] = "Index";
 }
 
-<style>
 
-    .stat-link{
-        color:lightsteelblue;
-    }
-
-    .playerCrudLink{
-        color:lightsteelblue;
-
-    }
-
-</style>
-
-<table class="table">
-    <thead>
-        <tr>
-
-            <th>
-                @Html.DisplayNameFor(model => model.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Hits)
-            </th>
-
-            <th>
-                @Html.DisplayNameFor(model => model.Doubles)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Triples)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HomeRuns)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RunsBattedIn)
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-        <tr>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.playerInfo.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.playerInfo.LastName)
-            </td>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.Hits)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Doubles)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Triples)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HomeRuns)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RunsBattedIn)
-            </td>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                <a class="stat-link" asp-action="Details" asp-route-id="@item.StatId">Details</a>
-            </td>
-            <td>
-                <a class="stat-link" asp-area="Identity" asp-action="Edit" asp-route-id="@item.StatId">Edit</a> 
-                <a class="stat-link" asp-area="Identity" asp-action="Delete" asp-route-id="@item.StatId">Delete</a>
-            </td>
-        </tr>
-            
-        }
-    </tbody>
-</table>
