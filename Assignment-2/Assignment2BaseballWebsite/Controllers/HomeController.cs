@@ -34,6 +34,13 @@ namespace Assignment2BaseballWebsite.Controllers
             return View();
         }
 
+        public IActionResult FAQ()
+        {
+            ViewData["MEssage"] = "Your FAQ page";
+
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
