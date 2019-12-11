@@ -88,22 +88,23 @@ namespace Assignment2BaseballWebsiteTest
             var c = new SchedulesController(db);
             var schedule = new Schedule
             {
-                ScheduleId = 2,
-                HomeTeamScore = 3,
-                AwayTeamScore = 1,
+                ScheduleId = 3,
+                HomeTeamScore = 31,
+                AwayTeamScore = 13,
                 GameDate = new DateTime(2019, 05, 05, 13, 50, 22),
                 Time = "05:30",
                 TeamInfoId = 1
             };
 
             //Act
-            var r = await c.Delete(1);
+            await c.Create(schedule);
+            var r = await c.Delete(3);
 
             //Assert
             var result = Assert.IsType<ViewResult>(r);
             var model = Assert.IsAssignableFrom<Schedule>(result.ViewData.Model);
 
-            Assert.Equal(db.Schedule.Find(1), model);
+            Assert.Equal(db.Schedule.Find(3), model);
         }
     }
 }

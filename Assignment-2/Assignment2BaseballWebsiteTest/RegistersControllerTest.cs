@@ -21,6 +21,7 @@ namespace Assignment2BaseballWebsiteTest
 
             var register = new Register
             {
+                RegisterId = 2,
                 FirstName = "Meisam1",
                 LastName = "Koohaki1",
                 Gender = "male",
@@ -155,8 +156,9 @@ namespace Assignment2BaseballWebsiteTest
             var c = new RegistersController(db);
             var register = new Register
             {
-                FirstName = "Meisam1",
-                LastName = "Koohaki1",
+                RegisterId = 3,
+                FirstName = "Meisam12",
+                LastName = "Koohaki12",
                 Gender = "male",
                 BirthMonth = 19,
                 BirthDay = 2,
@@ -174,13 +176,14 @@ namespace Assignment2BaseballWebsiteTest
             };
 
             //Act
-            var r = await c.Delete(1);
+            await c.Create(register);
+            var r = await c.Delete(3);
 
             //Assert
             var result = Assert.IsType<ViewResult>(r);
             var model = Assert.IsAssignableFrom<Register>(result.ViewData.Model);
 
-            Assert.Equal(db.Register.Find(1), model);
+            Assert.Equal(db.Register.Find(3), model);
         }
     }
 }

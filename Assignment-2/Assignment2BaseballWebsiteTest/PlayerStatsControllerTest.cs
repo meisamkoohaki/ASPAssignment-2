@@ -66,7 +66,7 @@ namespace UnitTest1
             var c = new PlayerStatsController(db);
             var playerStats = new PlayerStats
             {
-                StatId = 1,
+                StatId = 2,
                 Hits = 1,
                 Doubles = 5,
                 Triples = 1,
@@ -76,13 +76,15 @@ namespace UnitTest1
             };
 
             //Act
-            var r = await c.Delete(1);
+            await c.Create(playerStats);
+
+            var r = await c.Delete(2);
 
             //Assert
             var result = Assert.IsType<ViewResult>(r);
             var model = Assert.IsAssignableFrom<PlayerStats>(result.ViewData.Model);
 
-            Assert.Equal(db.PlayerStats.Find(1), model);
+            Assert.Equal(db.PlayerStats.Find(2), model);
         }
 
     }
