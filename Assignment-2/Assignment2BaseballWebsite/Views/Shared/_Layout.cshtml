@@ -31,7 +31,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                
+
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -42,7 +42,6 @@
                     <li><a asp-area="" asp-controller="Schedules" asp-action="Index">Game Results</a></li>
                     <li><a asp-area="" asp-controller="PlayerStats" asp-action="Index">Player Stats</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a></li>
                 </ul>
                 <partial name="_LoginPartial" />
             </div>
@@ -53,7 +52,7 @@
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
+
         <footer id="foot">
             <p>&copy; 2019 - Assignment2BaseballWebsite</p>
         </footer>
@@ -79,8 +78,8 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
-    
-        @RenderSection("Scripts", required: false)
-  
+
+    @RenderSection("Scripts", required: false)
+
 </body>
 </html>

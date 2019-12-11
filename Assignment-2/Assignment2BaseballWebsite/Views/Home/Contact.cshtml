@@ -1,13 +1,75 @@
 ﻿@{
     ViewData["Title"] = "Contact";
 }
+//Contact.cshtml
+
+<head>
+    <title>Home Page</title>
+    <style>
+        h2 {
+            color: black;
+            font-weight: bold;
+            width: 80%;
+            font-family: 'Comic Sans MS', cursive;
+            font-size: 35px;
+        }
+
+        h3 {
+            color: black;
+            font-weight: bold;
+            width: 80%;
+            font-family: 'Comic Sans MS', cursive;
+            font-size: 65px;
+            margin-top: 40px;
+        }
+
+        h4 {
+            color: black;
+            font-weight: bold;
+            width: 80%;
+            font-family: 'Comic Sans MS', cursive;
+            font-size: 25px;
+            margin-top: 40px;
+        }
+
+        footer {
+            font-size: 1em;
+            font-family: 'Audiowide', cursive;
+            font-weight: 400;
+            text-align: center;
+            margin-top: 60em;
+        }
+
+        address {
+            color: springgreen;
+            font-weight: bold;
+            width: 80%;
+            font-family: 'Comic Sans MS', cursive;
+            font-size: 35px;
+            margin-left: 10%;
+        }
+
+        #map {
+            width: 100%;
+            height: 400px;
+            background-color: grey;
+        }
+    </style>
+
+
+</head>
+@{
+    ViewData["Title"] = "Contact";
+    ViewData["Message"] = "Contact Page";
+}
 <h2>@ViewData["Title"]</h2>
 <h3>@ViewData["Message"]</h3>
 
 <address>
+    <abbr title="Phone">Our Address is:</abbr>
     One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
+    Redmond, WA 98052-6399, L11 G11<br />
+    <abbr title="Phone">Our Telephone Number is:</abbr>
     425.555.0100
 </address>
 
@@ -15,3 +77,10 @@
     <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
     <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
 </address>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbNMbjn9Vjd99wpqeQi1bG9SUTIpRP0pU&callback=initMap">
+</script>
+
+<h4>Here is our location£¡</h4>
+<!--The div element for the map -->
+<div id="map"></div>
